@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root to: 'home#home'
   post 'books' => 'books#create'
   get 'books' => 'books#index'
-  get 'books/:id' => 'books#show'
-  get 'books/:id/edit' => 'books#edit'
+  get 'books/:id' => 'books#show', as: 'books_show'
+  get 'books/:id/edit' => 'books#edit', as: 'books_edit'
   patch 'books/:id' => 'books#update'
   delete "books/:id" => 'books#destroy', as: 'destroy_books'
 end

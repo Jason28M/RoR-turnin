@@ -9,7 +9,7 @@ class BooksController < ApplicationController
   end
 
   def start
-    redirect_to '/books'
+    redirect_to books_path
   end
 
   def new
@@ -23,7 +23,7 @@ class BooksController < ApplicationController
       flash[:create] = "Book was successfully created."
       redirect_to "/books/#{book.id}"
     else
-      flash[:blank] = "Error!Both Title and Body must be filled with one or more letters."
+      flash[:blank] = "error Both Title and Body must be filled with one or more letters."
       redirect_to "/books"
     end
   end
@@ -39,7 +39,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully updated."
       redirect_to "/books/#{book.id}"
     else
-      flash[:edit_blank] = "Error! Both Title and Body must be filled with one or more letters."
+      flash[:edit_blank] = "error Both Title and Body must be filled with one or more letters."
       redirect_to "/books/#{book.id}/edit"
     end
   end
